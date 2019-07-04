@@ -1,4 +1,4 @@
-package chapter6_functions
+package main
 
 import "fmt"
 
@@ -34,7 +34,7 @@ func add(args ...int) int {
 }
 
 //closure... It is possible to create functions inside of functions
-func f1() {
+func f3() {
 
 	add := func(x, y int) int {
 		return x + y
@@ -46,19 +46,18 @@ func f2() {
 
 	x := 0
 	inc := func(i int) int {
-		return i++
+		i++
+		return i
 	}
-	fmt.Println(inc())
-	fmt.Println(inc())
+	fmt.Println(inc(x))
+	fmt.Println(inc(x))
 }
 
 //Recursion
-func factorial(x int) {
-	if (x ==0)
+func factorial(x int) float64 {
+	if x == 0 {
 		return 1
-	return x * factorial(x-1)
+	}
+	return factorial(x-1) * float64(x)
 
 }
-
-
-
