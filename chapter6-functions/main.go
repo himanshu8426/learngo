@@ -41,3 +41,24 @@ func f1() {
 	}
 	fmt.Println(add(1, 1))
 }
+
+func f2() {
+
+	x := 0
+	inc := func(i int) int {
+		return i++
+	}
+	fmt.Println(inc())
+	fmt.Println(inc())
+}
+
+//Recursion
+func factorial(x int) {
+	if (x ==0)
+		return 1
+	return x * factorial(x-1)
+
+}
+
+
+
