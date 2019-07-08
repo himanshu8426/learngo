@@ -1,16 +1,16 @@
 package main
 
-import(
-	"net/http"
+import (
 	"io"
+	"net/http"
 )
 
-func hello(res http.ResponseWriter, req *http.Request)  {
+func hello(res http.ResponseWriter, req *http.Request) {
 
 	res.Header().Set(
 		"Content-Type",
 		"text/html",
-		)
+	)
 
 	io.WriteString(
 		res,
@@ -23,12 +23,11 @@ func hello(res http.ResponseWriter, req *http.Request)  {
       Hello World!
   </body>
 </html>`,
+	)
 
-		)
-	
 }
 
-func main()  {
-	http.HandleFunc("/hello", hello)
+func main() {
+	http.HandleFunc("/", hello)
 	http.ListenAndServe(":9000", nil)
 }
